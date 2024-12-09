@@ -1,0 +1,382 @@
+/* Body Reset */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* Header Styles */
+.header {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #000; /* Dark background to highlight animation */
+    color: #fff;
+    overflow: hidden;
+    text-align: center;
+}
+
+.header .container {
+    z-index: 1;
+}
+
+.header h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 10px #f4a261, 0 0 20px #f4a261, 0 0 40px #e76f51;
+}
+
+.header p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: #f4a261;
+}
+
+.header .btn {
+    padding: 10px 20px;
+    background: #f4a261;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.header .btn:hover {
+    background: #e76f51;
+}
+
+/* Electric Pulse Animation */
+.electric-line {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to right, #f4a261, #e76f51, #f4a261);
+    animation: pulse 2s infinite linear;
+    z-index: 0;
+}
+
+/* Pulse Animation */
+@keyframes pulse {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+.navbar {
+    background: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+    margin: 0;
+}
+
+.navbar ul li {
+    margin: 0 15px;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.navbar ul li a:hover {
+    color: #f4a261;
+}
+
+/* General Section Styling */
+section {
+    padding: 70px 0; /* Increased padding for better spacing */
+    text-align: center;
+}
+
+/* About Section */
+.about {
+    background: #f9f9f9; /* Light background for contrast */
+    padding: 80px 20px; /* Balanced padding */
+}
+
+.about h2 {
+    font-size: 2rem;
+    margin-bottom: 30px; /* Increased margin for breathing room */
+    color: #333;
+}
+
+.about .box {
+    max-width: 800px; /* Restrict the width of the box */
+    margin: 0 auto; /* Center the box */
+    text-align: left;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.about .box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.about p {
+    font-size: 1.2rem;
+    line-height: 1.8; /* Improved readability */
+    color: #555;
+}
+
+/* Events Section */
+.events {
+    background: #e9ecef; /* Subtle background color */
+    padding: 80px 20px; /* Balanced padding */
+}
+
+.events h2 {
+    font-size: 2rem;
+    margin-bottom: 40px; /* Spacing between title and grid */
+    color: #333;
+}
+
+.events-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px; /* Increased gap between cards */
+    margin: auto;
+    max-width: 1200px; /* Restrict width of the grid */
+    padding: 0 20px;
+}
+
+.event-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.event-card h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.event-card p {
+    font-size: 1.1rem;
+    color: #666;
+    line-height: 1.6;
+}
+
+
+footer {
+    text-align: center;
+    background: #333;
+    color: #fff;
+    padding: 10px 0;
+}
+
+/* Animation keyframes */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Initial states for scroll animations */
+.scroll-slide-up,
+.scroll-slide-left,
+.scroll-slide-right {
+    opacity: 0;
+    transform: translateY(50px); /* Down for slide-up */
+    transition: all 0.6s ease;
+}
+
+.scroll-slide-left {
+    transform: translateX(-50px); /* Left */
+}
+
+.scroll-slide-right {
+    transform: translateX(50px); /* Right */
+}
+
+/* Active states for animations */
+.scroll-slide-up.active,
+.scroll-slide-left.active,
+.scroll-slide-right.active {
+    opacity: 1;
+    transform: translate(0); /* Reset transform */
+}
+
+
+/* Default states for animations */
+.animate {
+    opacity: 0;
+    transform: translateY(50px); /* Slight shift for smooth entry */
+}
+
+.animate.active {
+    opacity: 1;
+    transform: translateY(0);
+    animation: none; /* Ensures it doesn't replay after activation */
+}
+
+/* Animation classes */
+.fade-in.active {
+    animation: fadeIn 1s ease forwards;
+}
+
+.fade-in-delay.active {
+    animation: fadeIn 1.5s ease forwards;
+}
+
+.slide-in-left.active {
+    animation: slideInLeft 1s ease forwards;
+}
+
+.slide-in-right.active {
+    animation: slideInRight 1s ease forwards;
+}
+
+.zoom-in.active {
+    animation: zoomIn 1s ease forwards;
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Buttons */
+.btn {
+    transition: transform 0.3s, background 0.3s;
+}
+
+.btn:hover {
+    transform: translateY(-5px);
+    background: #e76f51;
+}
+
+
+/* Box styles for About and Events */
+.box {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.box p {
+    font-size: 1.1rem;
+    color: #333;
+    line-height: 1.6;
+}
+
+.box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Event Card Styles */
+.events-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.event-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.event-card h3 {
+    color: #333;
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+.event-card p {
+    font-size: 1.1rem;
+    color: #666;
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Animation for elements */
+@keyframes zoomIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+
